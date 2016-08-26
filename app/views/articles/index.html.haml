@@ -1,2 +1,8 @@
-%h1 This is the index
+- @articles.each do |article|
+ %h2= article.title
+ %h4= truncate(article.content, length:200)	
+ %p 
+ Published at 
+ = article.created_at.strftime('%b %d, %Y')
+
 = link_to "New Article", new_article_path
